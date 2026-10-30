@@ -4,18 +4,17 @@
 
 一份技能源码，按需安装到不同客户端。每个技能围绕一个具体任务编写，逐步从真实使用中改进。
 
-**当前状态：仓库骨架已建立，尚未收录可安装的技能。** 下方安装命令在加入第一个技能后使用。
+已收录 [first-principles：第一性原理](skills/first-principles/SKILL.md)。技能正文以中文编写，技能名称与标准元数据字段使用英文。
 
 ## 仓库结构
 
 ```text
 skills/
 ├── skills/                    # 已完成、可安装的技能
-│   └── <skill-name>/
+│   └── first-principles/
 │       ├── SKILL.md           # 名称、触发条件和工作方式
-│       ├── references/        # 按需阅读的资料，可选
-│       ├── scripts/           # 可重复执行的工具，可选
-│       └── assets/            # 输出模板等资源，可选
+│       ├── agents/openai.yaml # Codex 展示信息
+│       └── references/        # 按需阅读的示例和概念来源
 ├── templates/
 │   └── SKILL.md.template      # 新技能模板，不参与安装发现
 ├── preferences/
@@ -24,14 +23,15 @@ skills/
 └── CLAUDE.md                 # 为 Claude Code 引入同一份仓库规则
 ```
 
-`skills/` 下的示例结构表示将来的布局，目前只有目录占位文件。分类先记录在下方目录表，技能文件夹保持一层。
+分类记录在下方目录表，技能文件夹保持一层。脚本和输出模板在确有需要时，放入对应技能的 `scripts/` 和 `assets/`。
 
 ## 技能目录
 
-目前为空。加入技能时在这里登记用途、适用客户端和来源；适用客户端以实际验证结果为准。
+加入技能时在这里登记用途、适用客户端和来源；适用客户端以实际验证结果为准。
 
 | 技能 | 用途 | 已验证客户端 | 来源 |
 | --- | --- | --- | --- |
+| [first-principles](skills/first-principles/SKILL.md) | 将复杂问题解构至公理，重新推演，并用核心推论和例子解释 | 待实际任务验证 | 原创；[概念来源](skills/first-principles/references/example-and-sources.md#概念来源) |
 
 ## 安装到 Codex 和 Claude Code
 
@@ -44,8 +44,8 @@ npx skills@latest add SteinShan/skills --list
 # 交互选择技能，安装为两个客户端的用户级技能
 npx skills@latest add SteinShan/skills -g -a codex claude-code
 
-# 只安装一个技能；将 my-skill 换成目录表中的实际名称
-npx skills@latest add SteinShan/skills -g -a codex claude-code --skill my-skill
+# 只安装第一性原理技能
+npx skills@latest add SteinShan/skills -g -a codex claude-code --skill first-principles
 ```
 
 省略 `-g` 可安装到当前项目。安装时核对所选技能和目标目录；已有同名技能时，先决定替换还是为自己的改编版更名。
