@@ -4,13 +4,16 @@
 
 一份技能源码，按需安装到不同客户端。每个技能围绕一个具体任务编写，逐步从真实使用中改进。
 
-已收录 [first-principles：第一性原理](skills/first-principles/SKILL.md)。技能正文以中文编写，技能名称与标准元数据字段使用英文。
+已收录技能见下方目录。技能正文以中文编写，技能名称与标准元数据字段使用英文。
 
 ## 仓库结构
 
 ```text
 skills/
 ├── skills/                    # 已完成、可安装的技能
+│   ├── designing-locks-and-transactions/
+│   │   ├── SKILL.md           # 锁与事务的原则、推演和检验
+│   │   └── agents/openai.yaml # Codex 展示信息
 │   └── first-principles/
 │       ├── SKILL.md           # 名称、触发条件和工作方式
 │       ├── agents/openai.yaml # Codex 展示信息
@@ -32,6 +35,7 @@ skills/
 | 技能 | 用途 | 已验证客户端 | 来源 |
 | --- | --- | --- | --- |
 | [first-principles](skills/first-principles/SKILL.md) | 将复杂问题解构至公理，重新推演，并用核心推论和例子解释 | 待实际任务验证 | 原创；[概念来源](skills/first-principles/references/example-and-sources.md#概念来源) |
+| [designing-locks-and-transactions](skills/designing-locks-and-transactions/SKILL.md) | 从业务约束推导互斥与事务边界，优先复用适用的分布式锁，按需使用显式数据库锁 | 待实际任务验证 | 原创；[依据](skills/designing-locks-and-transactions/SKILL.md#依据) |
 
 ## 安装到 Codex 和 Claude Code
 

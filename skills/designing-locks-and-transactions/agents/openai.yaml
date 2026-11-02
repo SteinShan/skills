@@ -1,0 +1,4 @@
+interface:
+  display_name: "锁与事务设计"
+  short_description: "从业务约束推导分布式锁、数据库锁与事务边界，明确默认策略和例外。"
+  default_prompt: "使用 $designing-locks-and-transactions 分析当前流程，说明需要保护的业务规则、锁与事务边界及选择依据。"
